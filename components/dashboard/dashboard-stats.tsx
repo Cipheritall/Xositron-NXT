@@ -64,16 +64,16 @@ function StatsCard({ title, value, description, icon, trend, trendLabel }: Stats
 export default function DashboardStats() {
   return (
     <Tabs defaultValue="overview" className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h2 className="text-xl font-semibold">Overview</h2>
-        <TabsList>
+        <TabsList className="w-full sm:w-auto">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
           <TabsTrigger value="reports">Reports</TabsTrigger>
         </TabsList>
       </div>
       <TabsContent value="overview" className="space-y-4">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <StatsCard
             title="Total Revenue"
             value="$45,231.89"
@@ -109,7 +109,7 @@ export default function DashboardStats() {
         </div>
       </TabsContent>
       <TabsContent value="analytics" className="space-y-4">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <StatsCard
             title="Average Transaction"
             value="$235.89"
@@ -145,7 +145,7 @@ export default function DashboardStats() {
         </div>
       </TabsContent>
       <TabsContent value="reports" className="space-y-4">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <StatsCard
             title="Monthly Growth"
             value="23.5%"

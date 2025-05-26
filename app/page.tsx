@@ -16,15 +16,15 @@ export default function Home() {
     <div className="flex flex-col">
       <DashboardHeader />
       
-      <div className="p-6 space-y-6 pb-16">
+      <div className="p-4 md:p-6 space-y-4 md:space-y-6 pb-16">
         <DashboardStats />
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <div className="lg:col-span-2">
             <Tabs defaultValue="7d" className="w-full">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                 <h2 className="text-xl font-semibold">Transaction Volume</h2>
-                <TabsList>
+                <TabsList className="w-full sm:w-auto">
                   <TabsTrigger value="24h">24h</TabsTrigger>
                   <TabsTrigger value="7d">7d</TabsTrigger>
                   <TabsTrigger value="30d">30d</TabsTrigger>
