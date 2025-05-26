@@ -1,21 +1,22 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Toaster } from '@/components/ui/toaster';
-import Sidebar from '@/components/layout/sidebar';
+import './globals.css'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/toaster'
+import { AuthProvider } from '@/components/auth-provider'
+import Sidebar from '@/components/layout/sidebar'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Xositron - Cryptocurrency Payment Management',
   description: 'Manage your cryptocurrency payments with ease',
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -26,13 +27,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen">
-            <Sidebar />
-            <main className="flex-1 overflow-x-hidden">{children}</main>
-          </div>
-          <Toaster />
+          <AuthProvider>
+            <div className="flex min-h-screen">
+              <Sidebar />
+              <main className="flex-1 overflow-x-hidden">{children}</main>
+            </div>
+            <Toaster />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
