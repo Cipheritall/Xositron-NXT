@@ -18,7 +18,7 @@ import {
   ChevronRight,
   Wallet,
   Key,
-  Bitcoin
+  Zap
 } from 'lucide-react'
 
 type SidebarItem = {
@@ -54,12 +54,12 @@ export default function Sidebar() {
       <div className="flex items-center p-4 h-16">
         {!collapsed && (
           <Link href="/" className="flex items-center gap-2">
-            <Bitcoin className="h-6 w-6 text-chart-1" />
-            <span className="font-bold text-lg">CryptoFlow</span>
+            <Zap className="h-6 w-6 text-chart-1" />
+            <span className="font-bold text-lg">Xositron</span>
           </Link>
         )}
         {collapsed && (
-          <Bitcoin className="h-6 w-6 mx-auto text-chart-1" />
+          <Zap className="h-6 w-6 mx-auto text-chart-1" />
         )}
       </div>
 

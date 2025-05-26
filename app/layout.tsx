@@ -8,7 +8,7 @@ import Sidebar from '@/components/layout/sidebar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CryptoFlow - Cryptocurrency Payment Management',
+  title: 'Xositron - Cryptocurrency Payment Management',
   description: 'Manage your cryptocurrency payments with ease',
 };
 
